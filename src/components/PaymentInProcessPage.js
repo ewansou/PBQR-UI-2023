@@ -2,13 +2,13 @@ import React, {useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import ClipLoader from "react-spinners/ClipLoader";
-import TwoStrips from "../images/makePayment2strips.png";
 import Grid from "@material-ui/core/Grid";
 import {css} from "@emotion/react";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import {API_BASE} from "../config/constants";
 
-function GIF2Prints() {
+const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imagePath}) => {
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -19,8 +19,10 @@ function GIF2Prints() {
     const classes = useStyles(); //Required for making styles
     const history = useHistory(); //Required for redirection
 
-    const amount = "1000";
-    const dollarAmount = "$" + amount / 100;
+    //const amount = {paymentAmount};
+    const dollarAmount = "$" + paymentAmount / 100;
+    //const imageSrc = ``;
+    //console.log(imagePath);
 
     //States
     const [data, updateData] = useState("Pending...");
@@ -30,10 +32,11 @@ function GIF2Prints() {
 
     //On first mount, call API to retrieve QR code
     useEffect(() => {
+        let apiURL = API_BASE + `/payment/amount=` + paymentAmount;
         const fetchData = async () => {
             try {
                 const response = await axios
-                    .post('http://localhost:23168/api/payment/amount=100', {});
+                    .post(apiURL, {});
                 updatePostRequestStateObject(response.data);
             } catch (error) {
                 console.error(error);
@@ -44,24 +47,26 @@ function GIF2Prints() {
 
     //postRequestStateObject is an empty object on mount. We check if its lenght is not zero before we initiate sse
     useEffect(() => {
-        if(Object.keys(postRequestStateObject).length !== 0) {
+        if (Object.keys(postRequestStateObject).length !== 0) {
             console.log(
-                "SSE end point ($10) is: " + postRequestStateObject.sseEndpoint
+                "SSE end point is: " + postRequestStateObject.sseEndpoint
             );
             sseSource = new EventSource(postRequestStateObject.sseEndpoint);
             sseSource.onmessage = function logEvents(event) {
                 console.log("Receive payment message from server");
                 updateData(event.data);
                 sseSource.close();
-                console.log("Closing sse...");
-                history.push("/paymentsuccessgif2");
+                console.log("Closing SSE...");
+                let paymentSuccessURL = '/paymentsuccessgif' + paymentSuccess
+                history.push(paymentSuccessURL);
             };
         }
     }, [postRequestStateObject]);
 
     //On closing SSE (due to time out) or back button, we send GET request to server to close and remove SSE
     function closeSse(chargeID) {
-        axios.get(`http://localhost:23168/api/terminateSse?id=${chargeID}`)
+
+        axios.get(API_BASE + `/terminateSse?id=${chargeID}`)
             .then(response => {
                 console.log(response.data);
             })
@@ -109,10 +114,10 @@ function GIF2Prints() {
                 <Grid container item xs={6} className="makePaymentLeft">
                     <Grid item xs={12} container={true}>
                         <div className="makePaymentLeftDiv">
-                            <h1 className="makePaymentLeftTitle">2 Bookmark Printouts</h1>
+                            <h1 className="makePaymentLeftTitle">{printCount} Bookmark Printouts</h1>
                             <span>with softcopies emailing</span>
                             <img
-                                src={TwoStrips}
+                                src={imagePath}
                                 className="makePaymentLeft2BookmarkPrintoutsImage"
                             />
                         </div>
@@ -181,4 +186,4 @@ function GIF2Prints() {
     );
 }
 
-export default GIF2Prints;
+export default PaymentInProcessPage;

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import instantlysgLogo from "../images/instantlysg-logo.png";
 
-function PaymentSuccessGIF2() {
+const PaymentSuccessGIF = ({successColorBlockClass}) => {
     const history = useHistory();
 
     const renderTime = ({ remainingTime }) => {
@@ -19,14 +19,14 @@ function PaymentSuccessGIF2() {
     };
 
     return (
-        <div className="paymentSuccessGIF2Div">
-            <div className="paymentSuccessGIF2ColorBlock"></div>
-            <h1 className="paymentSuccessGIF2Text">PAYMENT SUCCESS</h1>
-            <h1 className="paymentSuccessGIF2ThankYou">THANK YOU</h1>
-            <h1 className="paymentSuccessGIF2Message">
+        <div className="paymentSuccessGIFDiv">
+            <div className={successColorBlockClass}></div>
+            <h1 className="paymentSuccessGIFText">PAYMENT SUCCESS</h1>
+            <h1 className="paymentSuccessGIFThankYou">THANK YOU</h1>
+            <h1 className="paymentSuccessGIFMessage">
                 Photo taking session will begin shortly ...
             </h1>
-            <span className="paymentSuccessGIF2CountDown">
+            <span className="paymentSuccessGIFCountDown">
         <CountdownCircleTimer
             onComplete={() => {
                 history.push("/");
@@ -40,12 +40,12 @@ function PaymentSuccessGIF2() {
           {renderTime}
         </CountdownCircleTimer>
       </span>
-            <div className="paymentSuccessGIF2LogoDiv">
-                <p className="paymentSuccessGIF2Presented">Presented to you by:</p>
-                <img src={instantlysgLogo} className="paymentSuccessGIF2Logo" />
+            <div className="paymentSuccessGIFLogoDiv">
+                <p className="paymentSuccessGIFPresented">Presented to you by:</p>
+                <img src={instantlysgLogo} className="paymentSuccessGIFLogo" />
             </div>
         </div>
     );
 }
 
-export default PaymentSuccessGIF2;
+export default PaymentSuccessGIF;

@@ -201,23 +201,13 @@ body {
 }
 /*END MAKE PAYMENT PAGE*/
 
-/*PAYMENT SUCCESS GIF 2 PAGE*/
+/*START PAYMENT SUCCESS GIF COMPONENT PAGE*/
 
-.paymentSuccessGIF2Div {
+.paymentSuccessGIFDiv {
   margin: 50px 0px;
 }
 
-.paymentSuccessGIF2ColorBlock {
-  width: 5px;
-  height: 5px;
-  display: inline-block;
-  background: #f8aaaa;
-  position: relative;
-  bottom: 55px;
-  left: 5px;
-}
-
-.paymentSuccessGIF2Text {
+.paymentSuccessGIFText {
   font-size: 120px;
   display: block;
   text-align: center;
@@ -226,7 +216,7 @@ body {
   margin-top: 150px;
 }
 
-.paymentSuccessGIF2ThankYou {
+.paymentSuccessGIFThankYou {
   font-size: 200px;
   display: block;
   text-align: center;
@@ -235,7 +225,7 @@ body {
   margin-bottom: 10px;
 }
 
-.paymentSuccessGIF2Message {
+.paymentSuccessGIFMessage {
   font-size: 50px;
   display: block;
   text-align: center;
@@ -244,12 +234,12 @@ body {
   margin-bottom: 20px;
 }
 
-.paymentSuccessGIF2CountDown > div {
+.paymentSuccessGIFCountDown > div {
   position: relative;
   left: 45px !important;
 }
 
-.paymentSuccessGIF2LogoDiv {
+.paymentSuccessGIFLogoDiv {
   display: inline-block;
   position: relative;
   top: 90px;
@@ -257,23 +247,29 @@ body {
   width: 30%;
 }
 
-.paymentSuccessGIF2Logo {
+.paymentSuccessGIFLogo {
   width: 100%;
   display: inline-block;
 }
 
-.paymentSuccessGIF2Presented {
+.paymentSuccessGIFPresented {
   display: inline-block;
   font-weight: 700;
   font-size: 35px;
 }
 
-/*END PAYMENT SUCCESS GIF 2 PAGE*/
+/*END PAYMENT SUCCESS GIF COMPONENT PAGE*/
 
-/*PAYMENT SUCCESS GIF 4 PAGE*/
 
-.paymentSuccessGIF4Div {
-  margin: 50px 0px;
+/*PAYMENT SUCCESS COLOR BLOCK*/
+.paymentSuccessGIF2ColorBlock {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  background: #f8aaaa;
+  position: relative;
+  bottom: 55px;
+  left: 5px;
 }
 
 .paymentSuccessGIF4ColorBlock {
@@ -286,65 +282,6 @@ body {
   left: 5px;
 }
 
-.paymentSuccessGIF4Text {
-  font-size: 120px;
-  display: block;
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  margin-top: 150px;
-}
-
-.paymentSuccessGIF4ThankYou {
-  font-size: 200px;
-  display: block;
-  text-align: center;
-  color: #f26522;
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
-.paymentSuccessGIF4Message {
-  font-size: 50px;
-  display: block;
-  text-align: center;
-  color: #000000;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-
-.paymentSuccessGIF4CountDown > div {
-  position: relative;
-  left: 45px !important;
-}
-
-.paymentSuccessGIF4LogoDiv {
-  display: inline-block;
-  position: relative;
-  top: 90px;
-  left: 1200px;
-  width: 30%;
-}
-
-.paymentSuccessGIF4Logo {
-  width: 100%;
-  display: inline-block;
-}
-
-.paymentSuccessGIF4Presented {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 35px;
-}
-
-/*END PAYMENT SUCCESS GIF 4 PAGE*/
-
-/*PAYMENT SUCCESS GIF 6 PAGE*/
-
-.paymentSuccessGIF6Div {
-  margin: 50px 0px;
-}
-
 .paymentSuccessGIF6ColorBlock {
   width: 5px;
   height: 5px;
@@ -354,56 +291,4 @@ body {
   bottom: 55px;
   left: 5px;
 }
-
-.paymentSuccessGIF6Text {
-  font-size: 120px;
-  display: block;
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  margin-top: 150px;
-}
-
-.paymentSuccessGIF6ThankYou {
-  font-size: 200px;
-  display: block;
-  text-align: center;
-  color: #f26522;
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
-.paymentSuccessGIF6Message {
-  font-size: 50px;
-  display: block;
-  text-align: center;
-  color: #000000;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-
-.paymentSuccessGIF6CountDown > div {
-  position: relative;
-  left: 45px !important;
-}
-
-.paymentSuccessGIF6LogoDiv {
-  display: inline-block;
-  position: relative;
-  top: 90px;
-  left: 1200px;
-  width: 30%;
-}
-
-.paymentSuccessGIF6Logo {
-  width: 100%;
-  display: inline-block;
-}
-
-.paymentSuccessGIF6Presented {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 35px;
-}
-
-/*END PAYMENT SUCCESS GIF 6 PAGE*/
+/*END OF PAYMENT SUCCESS COLOR BLOCK*/

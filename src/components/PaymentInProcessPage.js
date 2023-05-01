@@ -19,10 +19,7 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
     const classes = useStyles(); //Required for making styles
     const history = useHistory(); //Required for redirection
 
-    //const amount = {paymentAmount};
     const dollarAmount = "$" + paymentAmount / 100;
-    //const imageSrc = ``;
-    //console.log(imagePath);
 
     //States
     const [data, updateData] = useState("Pending...");
@@ -53,12 +50,16 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
             );
             sseSource = new EventSource(postRequestStateObject.sseEndpoint);
             sseSource.onmessage = function logEvents(event) {
-                console.log("Receive payment message from server");
-                updateData(event.data);
-                sseSource.close();
-                console.log("Closing SSE...");
-                let paymentSuccessURL = '/paymentsuccessgif' + paymentSuccess
-                history.push(paymentSuccessURL);
+                console.log("Receive message from server");
+                if (event.data === "heartbeat") {
+                    console.log("Hearbeating...")
+                } else if (event.data === "Payment received") {
+                    updateData(event.data);
+                    sseSource.close();
+                    console.log("Closing SSE...");
+                    let paymentSuccessURL = '/paymentsuccessgif' + paymentSuccess
+                    history.push(paymentSuccessURL);
+                }
             };
         }
     }, [postRequestStateObject]);

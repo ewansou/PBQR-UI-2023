@@ -19,8 +19,9 @@ const PaymentSuccessGIF = ({successColorBlockClass}) => {
     };
 
     return (
+        <div>
+        <div className={successColorBlockClass}></div>
         <div className="paymentSuccessGIFDiv">
-            <div className={successColorBlockClass}></div>
             <h1 className="paymentSuccessGIFText">PAYMENT SUCCESS</h1>
             <h1 className="paymentSuccessGIFThankYou">THANK YOU</h1>
             <h1 className="paymentSuccessGIFMessage">
@@ -33,7 +34,7 @@ const PaymentSuccessGIF = ({successColorBlockClass}) => {
                 return [true, 1500];
             }}
             isPlaying
-            duration={5} //20 seconds
+            duration={10} //20 seconds
             size={0}
             colors="#e3e3e3"
         >
@@ -44,6 +45,7 @@ const PaymentSuccessGIF = ({successColorBlockClass}) => {
                 <p className="paymentSuccessGIFPresented">Presented to you by:</p>
                 <img src={instantlysgLogo} className="paymentSuccessGIFLogo" />
             </div>
+        </div>
         </div>
     );
 }

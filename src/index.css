@@ -205,6 +205,8 @@ body {
 
 .paymentSuccessGIFDiv {
   margin: 50px 0px;
+  position: relative;
+  top: 20px;
 }
 
 .paymentSuccessGIFText {
@@ -263,32 +265,32 @@ body {
 
 /*PAYMENT SUCCESS COLOR BLOCK*/
 .paymentSuccessGIF2ColorBlock {
-  width: 5px;
-  height: 5px;
+  width: 50px;
+  height: 50px;
   display: inline-block;
   background: #f8aaaa;
   position: relative;
-  bottom: 55px;
-  left: 5px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .paymentSuccessGIF4ColorBlock {
-  width: 5px;
-  height: 5px;
+  width: 50px;
+  height: 50px;
   display: inline-block;
   background: #afffb6;
   position: relative;
-  bottom: 55px;
-  left: 5px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .paymentSuccessGIF6ColorBlock {
-  width: 5px;
-  height: 5px;
+  width: 50px;
+  height: 50px;
   display: inline-block;
   background: #b2ccfd;
   position: relative;
-  bottom: 55px;
-  left: 5px;
+  bottom: 0px;
+  left: 0px;
 }
 /*END OF PAYMENT SUCCESS COLOR BLOCK*/

@@ -121,6 +121,8 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                                 src={imagePath}
                                 className="makePaymentLeft2BookmarkPrintoutsImage"
                             />
+                            <p className="paymentAgree">By making payment, you agree to the terms and conditions of using 
+                            this photo booth service (displayed in the previous screen).</p>
                         </div>
                     </Grid>
                 </Grid>

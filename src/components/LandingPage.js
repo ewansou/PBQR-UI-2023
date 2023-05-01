@@ -2,10 +2,12 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import LandingPageCarousel from "./Carousel";
 import landing2strips from "../images/landing-2strips.png";
 import landing4strips from "../images/landing-4strips.png";
 import landing6strips from "../images/landing-6strips.png";
+import privancyclause from "../images/privacyclause.jpg";
+
+
 function LandingPage() {
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -20,9 +22,7 @@ function LandingPage() {
             <Grid container>
                 <Grid container item xs={6} className="landingLeft">
                     <Grid item xs={12} container={true}>
-                        <Paper elevation={0} className={classes.paper}>
-                            <LandingPageCarousel/>
-                        </Paper>
+                    <img src={privancyclause} alt="privancy clause"/>
                     </Grid>
                 </Grid>
                 {<Grid container item xs={6}>

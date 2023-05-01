@@ -55,6 +55,17 @@ body {
 
 /*MAKE PAYMENT PAGE*/
 
+.paymentAgree {
+  font-family: "Helvetica";
+  color: #FFFFFF;
+  text-align: center;
+  width: 70%;
+  position: relative;
+  margin: 40px auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .makePaymentLeft {
   background-color: #f26522;
   height: 100vh;

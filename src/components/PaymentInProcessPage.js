@@ -42,9 +42,9 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
         fetchData();
     }, []);
 
-    //postRequestStateObject is an empty object on mount. We check if its lenght is not zero before we initiate sse
+    //postRequestStateObject is an empty object on mount. We check if its length is not zero before we initiate sse
     useEffect(() => {
-        if (Object.keys(postRequestStateObject).length !== 0) {
+        if ((Object.keys(postRequestStateObject).length !== 0) && (postRequestStateObject.status !== "failed")) {
             console.log(
                 "SSE end point is: " + postRequestStateObject.sseEndpoint
             );
@@ -52,7 +52,7 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
             sseSource.onmessage = function logEvents(event) {
                 console.log("Receive message from server");
                 if (event.data === "heartbeat") {
-                    console.log("Hearbeating...")
+                    console.log("Heartbeating...")
                 } else if (event.data === "Payment received") {
                     updateData(event.data);
                     sseSource.close();
@@ -61,6 +61,11 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                     history.push(paymentSuccessURL);
                 }
             };
+        } else if ((Object.keys(postRequestStateObject).length !== 0) && (postRequestStateObject.status === "failed")) {
+            console.log("POST request to Omise failed. Omise return failed status");
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000); //If Omise returns failed status, retry after 5 seconds
         }
     }, [postRequestStateObject]);
 
@@ -121,8 +126,8 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                                 src={imagePath}
                                 className="makePaymentLeft2BookmarkPrintoutsImage"
                             />
-                            <p className="paymentAgree">By making payment, you agree to the terms and conditions of using 
-                            this photo booth service (displayed in the previous screen).</p>
+                            <p className="paymentAgree">By making payment, you agree to the terms and conditions of
+                                using this photo booth service (displayed in the previous screen).</p>
                         </div>
                     </Grid>
                 </Grid>
@@ -165,8 +170,7 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                                     </div>
                                     <p className="makePaymentAmount">Amount: {dollarAmount}</p>
                                     <p className="makePaymentBackWarning">
-                                        * DO NOT touch the Back button after you've scanned and made
-                                        payment
+                                        * DO NOT touch the Back button after you've scanned and made payment
                                     </p>
                                     <button
                                         onClick={terminateSseAndGoBackMenu}

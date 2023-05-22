@@ -3,9 +3,9 @@ import { Route, HashRouter, Switch } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import PaymentInProcessPage from './components/PaymentInProcessPage';
 import PaymentSuccessGIF from './components/PaymentSuccessGIF';
-import landing2strips from './images/landing-2strips.png';
-import landing4strips from './images/landing-4strips.png';
-import landing6strips from './images/landing-6strips.png';
+import makepayment2strips from './images/makePayment2strips.png';
+import makepayment4strips from './images/makePayment4strips.png';
+import makepayment6strips from './images/makePayment6strips.png';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
               paymentAmount="1000"
               paymentSuccess="2"
               printCount="2"
-              imagePath={landing2strips}
+              imagePath={makepayment2strips}
             />
           </Route>
           <Route exact path="/paymentsuccessgif2">
@@ -31,7 +31,7 @@ function App() {
               paymentAmount="1200"
               paymentSuccess="4"
               printCount="4"
-              imagePath={landing4strips}
+              imagePath={makepayment4strips}
             />
           </Route>
           <Route exact path="/paymentsuccessgif4">
@@ -42,7 +42,7 @@ function App() {
               paymentAmount="1400"
               paymentSuccess="6"
               printCount="6"
-              imagePath={landing6strips}
+              imagePath={makepayment6strips}
             />
           </Route>
           <Route exact path="/paymentsuccessgif6">

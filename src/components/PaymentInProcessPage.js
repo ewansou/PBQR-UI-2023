@@ -8,7 +8,7 @@ import axios from "axios";
 import {useHistory} from "react-router-dom";
 import {API_BASE} from "../config/constants";
 
-const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imagePath}) => {
+const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCount, imagePath}) => {
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -42,13 +42,18 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
         fetchData();
     }, []);
 
-    //postRequestStateObject is an empty object on mount. We check if its length is not zero before we initiate sse
+    /*
+    postRequestStateObject is an empty object on mount. We check if its length is not zero before we initiate sse.
+    If there is an issue with POST request to Omise, Omise will return with response with an id, status failed and
+    with an empty source {}.
+    Do note that response from Omise can have status to be "pending", "successful" or "failed".
+     */
     useEffect(() => {
         if ((Object.keys(postRequestStateObject).length !== 0) && (postRequestStateObject.status !== "failed")) {
             console.log(
                 "SSE end point is: " + postRequestStateObject.sseEndpoint
             );
-            sseSource = new EventSource(postRequestStateObject.sseEndpoint);
+            sseSource = new EventSource(postRequestStateObject.sseEndpoint); //GET request to backend to initiate sse
             sseSource.onmessage = function logEvents(event) {
                 console.log("Receive message from server");
                 if (event.data === "heartbeat") {
@@ -57,8 +62,14 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                     updateData(event.data);
                     sseSource.close();
                     console.log("Closing SSE...");
-                    let paymentSuccessURL = '/paymentsuccessgif' + paymentSuccess
                     history.push(paymentSuccessURL);
+                } else if (event.data === "Payment failed. Retrying...") {
+                    updateData(event.data);
+                    sseSource.close();
+                    console.log("Closing SSE...");
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 5000);
                 }
             };
         } else if ((Object.keys(postRequestStateObject).length !== 0) && (postRequestStateObject.status === "failed")) {
@@ -126,8 +137,7 @@ const PaymentInProcessPage = ({paymentAmount, paymentSuccess, printCount, imageP
                                 src={imagePath}
                                 className="makePaymentLeft2BookmarkPrintoutsImage"
                             />
-                            <p className="paymentAgree">By making payment, you agree to the terms and conditions of
-                                using this photo booth service (displayed in the previous screen).</p>
+                            <p className="paymentAgree">{clause}</p>
                         </div>
                     </Grid>
                 </Grid>

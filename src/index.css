@@ -15,8 +15,39 @@ body {
   border-right: 1px solid #e3e3e3;
 }
 
+.landingSelectionTileDiv {
+  display: block;
+  padding: 20px;
+}
+
+.landingSelectionTileDiv > h1{
+  font-size: 30px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+.landingSelectionTileDiv > h2{
+  font-size: 21px;
+  text-align: left;
+  font-weight:normal;
+  padding: 22px;
+  margin-top: 0px;
+}
+
+.landingSelectionTileDivRow {
+  display: block;
+  position: relative;
+  right: 10px;
+  bottom: 40px;
+}
+
+.landingSelectionTileDivRow div{ /*Price and select div*/
+  display: block;
+  width: 375px;
+  float: right;
+}
+
 .landingImage {
-  display: inline-block;
   float: left;
   width: 45%;
   margin-top: 32px;
@@ -27,20 +58,21 @@ body {
 }
 
 .landingPricing {
-  display: inline-block;
-  font-size: 150px;
+  display: block;
+  font-size: 150px!important;
   color: #000000;
+  text-align: center;
   font-weight: 700;
-  margin: 30px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 
-.landingSelect {
+.landingSelectButton {
   background-color: #f26522;
   font-weight: 700;
   color: #ffffff;
   padding: 16px;
-  font-size: 55px;
-  width: 250px;
+  font-size: 60px;
+  width: 95%;
   border-radius: 15px;
   display: inline-block;
   text-decoration: none;
@@ -63,7 +95,7 @@ body {
   width: 70%;
   position: relative;
   margin: 40px auto;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -74,7 +106,7 @@ body {
 
 .makePaymentLeftDiv {
   width: 100%;
-  margin: 250px 0px;
+  margin: 200px 0px;
 }
 
 .makePaymentLeftTitle {
@@ -276,7 +308,7 @@ body {
 
 
 /*PAYMENT SUCCESS COLOR BLOCK*/
-.paymentSuccessGIF2ColorBlock {
+.paymentSuccessCollectEmailColorBlock {
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -286,21 +318,11 @@ body {
   left: 0px;
 }
 
-.paymentSuccessGIF4ColorBlock {
+.paymentSuccessDontCollectEmailColorBlock {
   width: 50px;
   height: 50px;
   display: inline-block;
   background: #afffb6;
-  position: relative;
-  bottom: 0px;
-  left: 0px;
-}
-
-.paymentSuccessGIF6ColorBlock {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  background: #b2ccfd;
   position: relative;
   bottom: 0px;
   left: 0px;

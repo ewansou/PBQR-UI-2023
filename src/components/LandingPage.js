@@ -2,14 +2,10 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import landing2strips from "../images/landing-2strips.png";
-import landing4strips from "../images/landing-4strips.png";
-import landing6strips from "../images/landing-6strips.png";
 import privancyclause from "../images/privacyclause.jpg";
-import { useHistory } from 'react-router-dom';
+import LandingSelectionTile from "./LandingSelectionTile";
 
 function LandingPage() {
-  const history = useHistory();
   const useStyles = makeStyles((theme) => ({
     paper: {
       flex: 1,
@@ -24,49 +20,33 @@ function LandingPage() {
       <Grid container>
         <Grid container item xs={6} className="landingLeft">
           <Grid item xs={12} container={true}>
-            <img src={privancyclause} alt="privancy clause" />
+            <img src={privancyclause} alt="privacy clause" />
           </Grid>
         </Grid>
         {
           <Grid container item xs={6}>
             <Grid item xs={12}>
               <Paper elevation={0} className={classes.paper}>
-                <img
-                  src={landing2strips}
-                  alt="pay 10"
-                  className="landingImage"
+                <LandingSelectionTile
+                    headerText="OPTION 1 ($2 DISCOUNT)"
+                    description="You CONSENT to receive marketing materials from Instantly Singapore Pte Ltd and
+                    Time Out Media Singapore Pte Ltd. The email addresses our system captured during your photo taking process will be
+                    shared with these two entities."
+                    amount="$8"
+                    url="/collectemail"
                 />
-                <h1 className="landingPricing">$10</h1>
-                <button
-                  className="landingSelect"
-                  onClick={() => history.push('/gif2prints')}
-                >
-                  SELECT
-                </button>
               </Paper>
             </Grid>
             <Grid item xs={12} className="landingMiddleGrid">
               <Paper elevation={0} className={classes.paper}>
-                <img src={landing4strips} className="landingImage" />
-                <h1 className="landingPricing">$12</h1>
-                <button
-                  className="landingSelect"
-                  onClick={() => history.push('/gif4prints')}
-                >
-                  SELECT
-                </button>
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper elevation={0} className={classes.paper}>
-                <img src={landing6strips} className="landingImage" />
-                <h1 className="landingPricing">$14</h1>
-                <button
-                  className="landingSelect"
-                  onClick={() => history.push('/gif6prints')}
-                >
-                  SELECT
-                </button>
+                <LandingSelectionTile
+                    headerText="OPTION 2 (REGULAR PRICE)"
+                    description="You DO NOT CONSENT to receive marketing materials from Instantly Singapore Pte Ltd and
+                    Time Out Media Singapore Pte Ltd. The email addresses our system captured during your photo taking process will
+                    be deleted and WILL NOT be shared with these two entities."
+                    amount="$10"
+                    url="/dontcollectemail"
+                />
               </Paper>
             </Grid>
           </Grid>

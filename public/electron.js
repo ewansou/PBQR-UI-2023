@@ -1,5 +1,5 @@
 const electron = require("electron");
-const { app, BrowserWindow, globalShortcut } = electron;
+const {app, BrowserWindow, globalShortcut} = electron;
 const path = require("path");
 
 const isDev = require("electron-is-dev");
@@ -41,16 +41,19 @@ function registerShortcuts() {
         }
     });
 
-    // globalShortcut.register("Ctrl+Shift+L", () => {
-    //     console.log('debug mode')
-    //     mainWindow.webContents.openDevTools()
-    // });
+    globalShortcut.register("Ctrl+Shift+L", () => {
+        console.log('debug mode')
+        mainWindow.webContents.openDevTools()
+    });
 }
 
 function unregisterShortcuts() {
-    globalShortcut.unregister("ALT+ENTER", () => {});
-    globalShortcut.unregister("ALT+ESC", () => {});
-    //globalShortcut.unregister("Ctrl+Shift+L", () => {});
+    globalShortcut.unregister("ALT+ENTER", () => {
+    });
+    globalShortcut.unregister("ALT+ESC", () => {
+    });
+    globalShortcut.unregister("Ctrl+Shift+L", () => {
+    });
 }
 
 function createWindow() {
@@ -62,9 +65,9 @@ function createWindow() {
 
     mainWindow.loadURL(
         isDev
-          ? "http://localhost:3000"
-          : `file://${path.join(__dirname, "../build/index.html")}`
-      );
+            ? "http://localhost:3000"
+            : `file://${path.join(__dirname, "../build/index.html")}`
+    );
 
     mainWindow.on("closed", function () {
         mainWindow = null;

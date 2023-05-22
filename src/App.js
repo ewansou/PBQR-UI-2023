@@ -4,8 +4,6 @@ import LandingPage from './components/LandingPage';
 import PaymentInProcessPage from './components/PaymentInProcessPage';
 import PaymentSuccessGIF from './components/PaymentSuccessGIF';
 import makepayment2strips from './images/makePayment2strips.png';
-import makepayment4strips from './images/makePayment4strips.png';
-import makepayment6strips from './images/makePayment6strips.png';
 
 function App() {
   return (
@@ -15,38 +13,33 @@ function App() {
           <Route exact path="/">
             <LandingPage />
           </Route>
-          <Route exact path="/gif2prints">
+          <Route exact path="/collectemail">
             <PaymentInProcessPage
-              paymentAmount="1000"
-              paymentSuccess="2"
+              clause="By making payment, you agree to the terms and conditions of using this photo booth service
+                (displayed in the preivous screen). Also, you CONSENT to receive marketing materials (via email) from
+                 Instantly Singapore Pte Ltd and Time Out Media Singapore Pte Ltd."
+              paymentAmount="800"
+              paymentSuccessURL="/collectemailsuccess"
               printCount="2"
               imagePath={makepayment2strips}
             />
           </Route>
-          <Route exact path="/paymentsuccessgif2">
-            <PaymentSuccessGIF successColorBlockClass="paymentSuccessGIF2ColorBlock" />
+          <Route exact path="/collectemailsuccess">
+            <PaymentSuccessGIF successColorBlockClass="paymentSuccessCollectEmailColorBlock" />
           </Route>
-          <Route exact path="/gif4prints">
+          <Route exact path="/dontcollectemail">
             <PaymentInProcessPage
-              paymentAmount="1200"
-              paymentSuccess="4"
-              printCount="4"
-              imagePath={makepayment4strips}
+                clause="By making payment, you agree to the terms and conditions of using this photo booth service
+                (displayed in the preivous screen). Also, you DO NOT CONSENT to receive marketing materials (via email)
+                from Instantly Singapore Pte Ltd and Time Out Media Singapore Pte Ltd."
+              paymentAmount="1000"
+              paymentSuccessURL="/dontcollectemailsuccess"
+              printCount="2"
+              imagePath={makepayment2strips}
             />
           </Route>
-          <Route exact path="/paymentsuccessgif4">
-            <PaymentSuccessGIF successColorBlockClass="paymentSuccessGIF4ColorBlock" />
-          </Route>
-          <Route exact path="/gif6prints">
-            <PaymentInProcessPage
-              paymentAmount="1400"
-              paymentSuccess="6"
-              printCount="6"
-              imagePath={makepayment6strips}
-            />
-          </Route>
-          <Route exact path="/paymentsuccessgif6">
-            <PaymentSuccessGIF successColorBlockClass="paymentSuccessGIF6ColorBlock" />
+          <Route exact path="/dontcollectemailsuccess">
+            <PaymentSuccessGIF successColorBlockClass="paymentSuccessDontCollectEmailColorBlock" />
           </Route>
         </Switch>
       </div>

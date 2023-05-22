@@ -1,14 +1,14 @@
 {
-  "name": "pbqr2023",
+  "name": "pbqr-gastrobeats-2023",
   "version": "0.1.0",
   "author": "Ewan Sou, Instantly Singapore Pte Ltd",
-  "description": "PBQR 2023 Electron JS UI",
+  "description": "PBQR GastroBeats 2023 Electron JS UI",
   "main": "build/electron.js",
   "homepage": "./",
   "private": true,
   "build": {
-    "appId": "instantlysg-pbqr2023",
-    "artifactName": "PBQR2023-SetUp-${version}.${ext}"
+    "appId": "instantlysg-pbqr-gastrobeats-2023",
+    "artifactName": "PBQR-GastroBeats-SetUp-${version}.${ext}"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",

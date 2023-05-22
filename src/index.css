@@ -44,6 +44,7 @@ body {
   border-radius: 15px;
   display: inline-block;
   text-decoration: none;
+  border: 0;
 }
 
 .landingMiddleGrid {

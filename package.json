@@ -1,6 +1,6 @@
 {
-  "name": "pbqr-gastrobeats-2023",
-  "version": "0.1.0",
+  "name": "pbqr-gastrobeats-2023-4Jun2023",
+  "version": "0.1.1",
   "author": "Ewan Sou, Instantly Singapore Pte Ltd",
   "description": "PBQR GastroBeats 2023 Electron JS UI",
   "main": "build/electron.js",

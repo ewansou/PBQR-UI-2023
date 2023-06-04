@@ -34,9 +34,22 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
             try {
                 const response = await axios
                     .post(apiURL, {});
-                updatePostRequestStateObject(response.data);
+                if (response.data.status === "failed") {
+                    console.log("POST requested failed at initial mount:", response.data.error);
+                    console.log("Error response is:", response.data);
+                    console.log("Retrying...");
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 5000);
+                } else {
+                    updatePostRequestStateObject(response.data);
+                }
             } catch (error) {
-                console.error(error);
+                console.error("Error in try catch POST request. Error is: ", error);
+                console.log("Retrying...");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000);
             }
         };
         fetchData();

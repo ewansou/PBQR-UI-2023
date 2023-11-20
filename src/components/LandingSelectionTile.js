@@ -7,8 +7,8 @@ const LandingSelectionTile = ({headerText, description, amount, url}) => {
 
     return (
         <div className="landingSelectionTileDiv">
-            <h1>{headerText}</h1>
-            <h2>{description}</h2>
+            {headerText && <h1>{headerText}</h1>}
+            {description && <h2>{description}</h2>}
             <div className="landingSelectionTileDivRow">
                 <img src={landing2strips} alt="pay 8" className="landingImage"/>
                 <div>

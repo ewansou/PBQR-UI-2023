@@ -1,3 +1,36 @@
 
-export const API_BASE = "https://pbqr-backend-2023.herokuapp.com/api"
-//export const API_BASE = "http://localhost:23168/api"
+//export const API_BASE = "https://pbqr-backend-2023.herokuapp.com/api"
+export const API_BASE = "http://localhost:23168/api"
+
+/*TOP OPTION*/
+export const APP_TOP_OPTION_PAYMENT_IN_PROCESS_CLAUSE = "By making payment, you agree to the terms and " +
+    "conditions of using this photo booth service (displayed in the previous screen)."
+export const APP_TOP_OPTION_PAYMENT_AMOUNT = "1000"
+export const APP_TOP_OPTION_PAYMENT_SUCCESS_URL = "/paymentsuccessgif2"
+export const APP_TOP_OPTION_PRINT_COUNT = "2"
+export const TOP_OPTION_URL = "/gif2prints"
+export const TOP_OPTION_AMOUNT = "$10"
+export const TOP_OPTION_HEADERTEXT = ""
+export const TOP_OPTION_DESCRIPTION = ""
+
+/*MIDDLE OPTION*/
+export const APP_MIDDLE_OPTION_PAYMENT_IN_PROCESS_CLAUSE = "By making payment, you agree to the terms and " +
+    "conditions of using this photo booth service (displayed in the previous screen)."
+export const APP_MIDDLE_OPTION_PAYMENT_AMOUNT = "1200"
+export const APP_MIDDLE_OPTION_PAYMENT_SUCCESS_URL = "/paymentsuccessgif4"
+export const APP_MIDDLE_OPTION_PRINT_COUNT = "4"
+export const MIDDLE_OPTION_URL = "/gif4prints"
+export const MIDDLE_OPTION_AMOUNT = "$12"
+export const MIDDLE_OPTION_HEADERTEXT = ""
+export const MIDDLE_OPTION_DESCRIPTION = ""
+
+/*BOTTOM OPTION*/
+export const APP_BOTTOM_OPTION_PAYMENT_IN_PROCESS_CLAUSE = "By making payment, you agree to the terms and " +
+    "conditions of using this photo booth service (displayed in the previous screen)."
+export const APP_BOTTOM_OPTION_PAYMENT_AMOUNT = "1400"
+export const APP_BOTTOM_OPTION_PAYMENT_SUCCESS_URL = "/paymentsuccessgif6"
+export const APP_BOTTOM_OPTION_PRINT_COUNT = "6"
+export const BOTTOM_OPTION_URL = "/gif6prints"
+export const BOTTOM_OPTION_AMOUNT = "$14"
+export const BOTTOM_OPTION_HEADERTEXT = ""
+export const BOTTOM_OPTION_DESCRIPTION = ""

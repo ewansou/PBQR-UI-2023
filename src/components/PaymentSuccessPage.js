@@ -3,8 +3,12 @@ import { useHistory } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import instantlysgLogo from "../images/instantlysg-logo.png";
 
-const PaymentSuccessGIF = ({successColorBlockClass}) => {
+const PaymentSuccessPage = ({headerText, successColor}) => {
     const history = useHistory();
+
+    const colorBlockColor = {
+        background: successColor,
+    };
 
     const renderTime = ({ remainingTime }) => {
         if (remainingTime === 0) {
@@ -20,14 +24,14 @@ const PaymentSuccessGIF = ({successColorBlockClass}) => {
 
     return (
         <div>
-        <div className={successColorBlockClass}></div>
-        <div className="paymentSuccessGIFDiv">
-            <h1 className="paymentSuccessGIFText">PAYMENT SUCCESS</h1>
-            <h1 className="paymentSuccessGIFThankYou">THANK YOU</h1>
-            <h1 className="paymentSuccessGIFMessage">
+        <div className="paymentSuccessPage_ColorBlock" style={colorBlockColor}></div>
+        <div className="paymentSuccessPage_Div">
+            <h1 className="paymentSuccessPage_SuccessText">{headerText}</h1>
+            <h1 className="paymentSuccessPage_ThankYou">THANK YOU</h1>
+            <h1 className="paymentSuccessPage_Message">
                 Photo taking session will begin shortly ...
             </h1>
-            <span className="paymentSuccessGIFCountDown">
+            <span className="paymentSuccessPage_CountDown">
         <CountdownCircleTimer
             onComplete={() => {
                 history.push("/");
@@ -41,13 +45,13 @@ const PaymentSuccessGIF = ({successColorBlockClass}) => {
           {renderTime}
         </CountdownCircleTimer>
       </span>
-            <div className="paymentSuccessGIFLogoDiv">
-                <p className="paymentSuccessGIFPresented">Presented to you by:</p>
-                <img src={instantlysgLogo} className="paymentSuccessGIFLogo" />
+            <div className="paymentSuccessPage_SuccessLogoDiv">
+                <p className="paymentSuccessPage_Presented">Presented to you by:</p>
+                <img src={instantlysgLogo} className="paymentSuccessPage_SucessLogo" />
             </div>
         </div>
         </div>
     );
 }
 
-export default PaymentSuccessGIF;
+export default PaymentSuccessPage;

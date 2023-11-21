@@ -8,25 +8,184 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*LANDING PAGE*/
-
-.landingLeft {
+/*START: PROMO WITH PAY PER USE LANDING PAGE*/
+.promoWithPayToUseLandingPage_Left {
   height: 100vh;
   border-right: 1px solid #e3e3e3;
 }
 
-.landingSelectionTileDiv {
+.promoWithPayToUseLandingPage_LeftDiv {
+  width: 100%;
+  margin: 200px 0px;
+}
+
+.promoWithPayToUseLanding_PageTitle {
+  color: #000000;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 700;
+  display: block;
+  margin: 50px 50px 25px 50px;
+}
+
+.promoWithPayToUseLanding_PageSubTitle {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 350;
+  display: block;
+  margin: 0px 50px 50px 50px;
+}
+
+.promoWithPayToUseLandingPage_Image{
+  width: 70%;
+  display: block;
+  margin: 50px auto 100px auto;
+}
+
+.promoWithPayToUseLandingPage_NextButton {
+  background-color: #f26522;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 16px;
+  font-size: 80px;
+  width: 50%;
+  border-radius: 15px;
+  display: block;
+  text-decoration: none;
+  border: 0;
+  margin: 0 auto;
+}
+/*END: PROMO WITH PAY PER USE LANDING PAGE*/
+
+/*START: PROMO LANDING PAGE */
+.promoLandingPage_Left {
+  height: 100vh;
+  width: 100%;
+  padding: 20px
+}
+
+.promoLandingPage_PageTitle {
+  color: #000000;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 700;
+  display: block;
+  margin: 50px 50px 25px 50px;
+}
+
+#text-input {
+  font-size: 50px;
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  padding: 20px;
+  width: 450px;
+  margin: 50px auto;
+  border: solid 5px #e3e3e3;
+}
+.promoLandingPage_ErrorMessage{
+  color: #f80000;
+}
+
+.promoLandingPage_SubmitButton {
+  background-color: #f26522;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 16px;
+  font-size: 60px;
+  width: 500px;
+  border-radius: 15px;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  border: 0;
+}
+
+.promoLandingPage_Right {
+  height: 100vh;
+  border-right: 1px solid #e3e3e3;
+  background: #F26522;
+}
+
+.promoLandingPage_PrivacyClause {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  width: 100%;
+  padding: 50px;
+}
+
+.promoLandingPage_BackButton{
+  background-color: #e3e3e3;
+  font-weight: 700;
+  color: #5F5F5F;
+  padding: 16px;
+  font-size: 40px;
+  width: 55%;
+  border-radius: 15px;
+  display: block;
+  text-decoration: none;
+  border: 0;
+  margin: 10px auto;
+  position: relative;
+  bottom: 40px;
+}
+/*END: PROMO LANDING PAGE */
+
+
+/*START: PAY TO USE LANDING PAGE*/
+.payToUseLandingPage_Left {
+  height: 100vh;
+  border-right: 1px solid #e3e3e3;
+  background: #F26522;
+}
+
+.payToUseLandingPage_PrivacyClause {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  width: 100%;
+  padding: 50px;
+}
+
+.payToUseLandingPage_BackButton{
+  background-color: #e3e3e3;
+  font-weight: 700;
+  color: #5F5F5F;
+  padding: 16px;
+  font-size: 40px;
+  width: 55%;
+  border-radius: 15px;
+  display: block;
+  text-decoration: none;
+  border: 0;
+  margin: 10px auto;
+  position: relative;
+  bottom: 40px;
+}
+
+.payToUseLandingPage_LandingMiddleGrid {
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+}
+/*END: PAY TO USE LANDING PAGE*/
+
+/*START: PAY TO USE LANDING SELECTION TILE*/
+.payToUseLandingSelectionTile_Div {
   display: block;
   padding: 20px;
 }
 
-.landingSelectionTileDiv > h1{
+.payToUseLandingSelectionTile_Div > h1{
   font-size: 30px;
   margin-bottom: 0px;
   margin-top: 15px;
 }
 
-.landingSelectionTileDiv > h2{
+.payToUseLandingSelectionTile_Div > h2{
   font-size: 21px;
   text-align: left;
   font-weight:normal;
@@ -34,20 +193,20 @@ body {
   margin-top: 0px;
 }
 
-.landingSelectionTileDivRow {
+.payToUseLandingSelectionTile_DivRow {
   display: block;
   position: relative;
   right: 10px;
-  bottom: 40px;
+  bottom: 20px;
 }
 
-.landingSelectionTileDivRow div{ /*Price and select div*/
+.payToUseLandingSelectionTile_DivRow div{ /*Price and select div*/
   display: block;
   width: 375px;
   float: right;
 }
 
-.landingImage {
+.payToUseLandingSelectionTile_LandingImage {
   float: left;
   width: 45%;
   margin-top: 32px;
@@ -57,7 +216,7 @@ body {
   border-radius: 20px;
 }
 
-.landingPricing {
+.payToUseLandingSelectionTile_LandingPricing {
   display: block;
   font-size: 150px!important;
   color: #000000;
@@ -66,7 +225,7 @@ body {
   margin: 20px 0 10px 0;
 }
 
-.landingSelectButton {
+.payToUseLandingSelectionTile_LandingSelectButton {
   background-color: #f26522;
   font-weight: 700;
   color: #ffffff;
@@ -78,17 +237,43 @@ body {
   text-decoration: none;
   border: 0;
 }
+/*END: PAY TO USE LANDING SELECTION TILE*/
 
-.landingMiddleGrid {
-  border-top: 1px solid #e3e3e3;
-  border-bottom: 1px solid #e3e3e3;
+/*START: PAYMENT IN PROGRESS PAGE*/
+.paymentInProgress_MakePaymentLeft {
+  background-color: #f26522;
+  height: 100vh;
 }
 
-/*END LANDING PAGE*/
+.paymentInProgress_MakePaymentLeftDiv {
+  width: 100%;
+  margin: 200px 0px;
+}
 
-/*MAKE PAYMENT PAGE*/
+.paymentInProgress_MakePaymentLeftDiv span {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 55px;
+}
 
-.paymentAgree {
+.paymentInProgress_MakePaymentLeftTitle {
+  color: #ffffff;
+  font-size: 70px;
+  text-align: center;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+}
+
+.paymentInProgress_MakePaymentImage{
+  width: 70%;
+  display: block;
+  margin: 50px auto 0 auto;
+}
+
+.paymentInProgress_PaymentAgree {
   font-family: "Helvetica";
   color: #FFFFFF;
   text-align: center;
@@ -99,58 +284,12 @@ body {
   font-weight: 700;
 }
 
-.makePaymentLeft {
-  background-color: #f26522;
-  height: 100vh;
-}
-
-.makePaymentLeftDiv {
-  width: 100%;
-  margin: 200px 0px;
-}
-
-.makePaymentLeftTitle {
-  color: #ffffff;
-  font-size: 70px;
-  text-align: center;
-  font-weight: 700;
-  display: block;
-  margin: 0 auto;
-}
-
-.makePaymentGeneratingQR {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  font-size: 25px;
-  font-weight: 700;
-  position: relative;
-  top: 50px;
-  left: 190px;
-}
-
-.makePaymentLeftDiv span {
-  display: block;
-  text-align: center;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 55px;
-}
-
-.makePaymentLeft2BookmarkPrintoutsImage,
-.makePaymentLeft4BookmarkPrintoutsImage,
-.makePaymentLeft6BookmarkPrintoutsImage {
-  width: 70%;
-  display: block;
-  margin: 50px auto 0 auto;
-}
-
-.makePaymentMainDiv {
+.paymentInProgress_MakePaymentMainDiv {
   display: block;
   width: 100%;
 }
 
-.makePaymentInstruction {
+.paymentInProgress_MakePaymentInstruction {
   display: block;
   width: 100%;
   text-align: center;
@@ -160,7 +299,7 @@ body {
   font-size: 40px;
 }
 
-.makePaymentRef {
+.paymentInProgress_MakePaymentRef {
   display: block;
   width: 100%;
   text-align: center;
@@ -169,7 +308,7 @@ body {
   color: #a7a6a6;
 }
 
-.makePaymentStatus {
+.paymentInProgress_MakePaymentStatus {
   display: block;
   width: 100%;
   text-align: center;
@@ -180,12 +319,12 @@ body {
   margin-bottom: 20px;
 }
 
-.makePaymentQRDiv {
+.paymentInProgress_makePaymentQRDiv {
   display: block;
   width: 100%;
 }
 
-.makePaymentInText {
+.paymentInProgress_MakePaymentInText {
   display: block;
   width: 100%;
   text-align: center;
@@ -193,7 +332,7 @@ body {
   margin: 0px;
 }
 
-.makePaymentInText > div {
+.paymentInProgress_MakePaymentInText > div {
   position: relative;
   display: block;
   margin-top: 5px;
@@ -203,13 +342,13 @@ body {
   height: auto !important;
 }
 
-.makePaymentQRCode {
+.paymentInProgress_MakePaymentQRCode {
   display: block;
   margin: 0 auto;
   width: 40%;
 }
 
-.makePaymentAmount {
+.paymentInProgress_MakePaymentAmount {
   display: block;
   width: 100%;
   text-align: center;
@@ -220,7 +359,7 @@ body {
   margin-bottom: 10px;
 }
 
-.makePaymentBackWarning {
+.paymentInProgress_MakePaymentBackWarning {
   display: block;
   width: 100%;
   text-align: center;
@@ -229,12 +368,12 @@ body {
   color: #ff0000;
 }
 
-.makePaymentBackButton {
+.paymentInProgress_MakePaymentBackButton {
   margin: 50px auto 0 auto;
   text-align: center;
   background-color: #e3e3e3;
   font-weight: 700;
-  color: #000000;
+  color: #5F5F5F;
   padding: 16px;
   font-size: 55px;
   width: 250px;
@@ -243,17 +382,28 @@ body {
   text-decoration: none;
   border: none;
 }
-/*END MAKE PAYMENT PAGE*/
 
-/*START PAYMENT SUCCESS GIF COMPONENT PAGE*/
+.paymentInProgress_MakePaymentGeneratingQR {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+  position: relative;
+  top: 50px;
+  left: 190px;
+}
+/*END: PAYMENT IN PROGRESS PAGE*/
 
-.paymentSuccessGIFDiv {
+
+/*START: PAYMENT SUCCESS PAGE*/
+.paymentSuccessPage_Div {
   margin: 50px 0px;
   position: relative;
   top: 20px;
 }
 
-.paymentSuccessGIFText {
+.paymentSuccessPage_SuccessText {
   font-size: 120px;
   display: block;
   text-align: center;
@@ -262,7 +412,7 @@ body {
   margin-top: 150px;
 }
 
-.paymentSuccessGIFThankYou {
+.paymentSuccessPage_ThankYou {
   font-size: 200px;
   display: block;
   text-align: center;
@@ -271,7 +421,7 @@ body {
   margin-bottom: 10px;
 }
 
-.paymentSuccessGIFMessage {
+.paymentSuccessPage_Message {
   font-size: 50px;
   display: block;
   text-align: center;
@@ -280,12 +430,12 @@ body {
   margin-bottom: 20px;
 }
 
-.paymentSuccessGIFCountDown > div {
+.paymentSuccessPage_CountDown > div {
   position: relative;
   left: 45px !important;
 }
 
-.paymentSuccessGIFLogoDiv {
+.paymentSuccessPage_SuccessLogoDiv {
   display: inline-block;
   position: relative;
   top: 90px;
@@ -293,22 +443,41 @@ body {
   width: 30%;
 }
 
-.paymentSuccessGIFLogo {
+.paymentSuccessPage_SucessLogo {
   width: 100%;
   display: inline-block;
 }
 
-.paymentSuccessGIFPresented {
+.paymentSuccessPage_Presented {
   display: inline-block;
   font-weight: 700;
   font-size: 35px;
 }
+/*END: PAYMENT SUCCESS PAGE*/
 
-/*END PAYMENT SUCCESS GIF COMPONENT PAGE*/
+
+/*START: PAYMENT SUCCESS COLOR BLOCK*/
+.paymentSuccessPage_ColorBlock {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
 
 
-/*PAYMENT SUCCESS COLOR BLOCK*/
-.paymentSuccessCollectEmailColorBlock {
+.paymentSuccessPage_PromoSuccess {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: #f3f18c;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+
+.paymentSuccessPage_GIF2ColorBlock {
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -318,7 +487,7 @@ body {
   left: 0px;
 }
 
-.paymentSuccessDontCollectEmailColorBlock {
+.paymentSuccessPage_GIF4ColorBlock {
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -327,4 +496,14 @@ body {
   bottom: 0px;
   left: 0px;
 }
-/*END OF PAYMENT SUCCESS COLOR BLOCK*/
+
+.paymentSuccessPage_GIF6ColorBlock {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: #8ca1f3;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+/*END: PAYMENT SUCCESS COLOR BLOCK*/

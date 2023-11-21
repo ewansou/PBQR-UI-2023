@@ -6,9 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import {css} from "@emotion/react";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-import {API_BASE} from "../config/constants";
+import {API_BASE, IS_4R} from "../config/constants";
 
-const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCount, imagePath}) => {
+const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printCount, imagePath}) => {
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -18,7 +18,7 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
     }));
     const classes = useStyles(); //Required for making styles
     const history = useHistory(); //Required for redirection
-
+    const printoutSize = IS_4R ? "4R" : "Bookmark";
     const dollarAmount = "$" + paymentAmount / 100;
 
     //States
@@ -108,7 +108,7 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
     function terminateSseAndGoBackMenu() {
         sseSource.close();
         closeSse(postRequestStateObject.chargeID);
-        history.push("/");
+        history.push("/paytouselandingpage");
     }
 
     const renderTime = ({remainingTime}) => {
@@ -141,36 +141,36 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
     return (
         <div className={classes.root}>
             <Grid container>
-                <Grid container item xs={6} className="makePaymentLeft">
+                <Grid container item xs={6} className="paymentInProgress_MakePaymentLeft">
                     <Grid item xs={12} container={true}>
-                        <div className="makePaymentLeftDiv">
-                            <h1 className="makePaymentLeftTitle">{printCount} Bookmark Printouts</h1>
+                        <div className="paymentInProgress_MakePaymentLeftDiv">
+                            <h1 className="paymentInProgress_MakePaymentLeftTitle">{printCount} {printoutSize} Printouts</h1>
                             <span>with softcopies emailing</span>
                             <img
                                 src={imagePath}
-                                className="makePaymentLeft2BookmarkPrintoutsImage"
+                                className="paymentInProgress_MakePaymentImage"
                             />
-                            <p className="paymentAgree">{clause}</p>
+                            <p className="paymentInProgress_PaymentAgree">{clause}</p>
                         </div>
                     </Grid>
                 </Grid>
                 <Grid container item xs={6}>
                     <Grid item xs={12} container={true} style={style}>
                         {postRequestStateObject.chargeID ? (
-                                <div className="makePaymentMainDiv">
-                                    <p className="makePaymentInstruction">
+                                <div className="paymentInProgress_MakePaymentMainDiv">
+                                    <p className="paymentInProgress_MakePaymentInstruction">
                                         Open your banking app.
                                     </p>
-                                    <p className="makePaymentInstruction">
+                                    <p className="paymentInProgress_MakePaymentInstruction">
                                         Scan the QR code below to make
                                     </p>
-                                    <p className="makePaymentInstruction">payment via PayNow</p>
-                                    <p className="makePaymentRef">
+                                    <p className="paymentInProgress_MakePaymentInstruction">payment via PayNow</p>
+                                    <p className="paymentInProgress_MakePaymentRef">
                                         Ref: {postRequestStateObject.chargeID}
                                     </p>
-                                    <h3 className="makePaymentStatus">Status: {data}</h3>
-                                    <div className="makePaymentQRDiv">
-                                        <p className="makePaymentInText">
+                                    <h3 className="paymentInProgress_MakePaymentStatus">Status: {data}</h3>
+                                    <div className="paymentInProgress_MakePaymentQRDiv">
+                                        <p className="paymentInProgress_MakePaymentInText">
                                             Kindly make payment in
                                             <CountdownCircleTimer
                                                 onComplete={() => {
@@ -188,16 +188,16 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
 
                                         <img
                                             src={postRequestStateObject.imageURL}
-                                            className="makePaymentQRCode"
+                                            className="paymentInProgress_MakePaymentQRCode"
                                         />
                                     </div>
-                                    <p className="makePaymentAmount">Amount: {dollarAmount}</p>
-                                    <p className="makePaymentBackWarning">
+                                    <p className="paymentInProgress_MakePaymentAmount">Amount: {dollarAmount}</p>
+                                    <p className="paymentInProgress_MakePaymentBackWarning">
                                         * DO NOT touch the Back button after you've scanned and made payment
                                     </p>
                                     <button
                                         onClick={terminateSseAndGoBackMenu}
-                                        className="makePaymentBackButton"
+                                        className="paymentInProgress_MakePaymentBackButton"
                                     >
                                         BACK
                                     </button>
@@ -205,7 +205,7 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
                             ) :
                             <div>
                                 <ClipLoader css={override}/>
-                                <p className="makePaymentGeneratingQR">
+                                <p className="paymentInProgress_MakePaymentGeneratingQR">
                                     Please hold on. Generating payment QR ...
                                 </p>
                             </div>}
@@ -216,4 +216,4 @@ const PaymentInProcessPage = ({clause, paymentAmount, paymentSuccessURL, printCo
     );
 }
 
-export default PaymentInProcessPage;
+export default PaymentInProgressPage;

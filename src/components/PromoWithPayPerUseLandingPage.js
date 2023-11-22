@@ -1,7 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import makepayment2strips from '../images/makePayment2strips.png';
+import payPerUseIcon from '../images/pay-to-use-landing-page-icon.png';
+import promoIcon from '../images/promo-landing-page-icon.png';
 import {useHistory} from "react-router-dom";
 
 function PromoWithPayPerUseLandingPage() {
@@ -25,7 +26,7 @@ function PromoWithPayPerUseLandingPage() {
                             <h1 className="promoWithPayToUseLanding_PageTitle">Using a Promo Code?</h1>
                             <p className="promoWithPayToUseLanding_PageSubTitle">Enter it to use the photo booth for free!</p>
                             <img
-                                src={makepayment2strips}
+                                src={promoIcon}
                                 className="promoWithPayToUseLandingPage_Image"
                             />
                             <button
@@ -43,7 +44,7 @@ function PromoWithPayPerUseLandingPage() {
                             <h1 className="promoWithPayToUseLanding_PageTitle">Pay To Use</h1>
                             <p className="promoWithPayToUseLanding_PageSubTitle">Enjoy our photo booth from $10</p>
                             <img
-                                src={makepayment2strips}
+                                src={payPerUseIcon}
                                 className="promoWithPayToUseLandingPage_Image"
                             />
                             <button

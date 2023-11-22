@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useRef, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {CountdownCircleTimer} from "react-countdown-circle-timer";
-import ClipLoader from "react-spinners/ClipLoader";
 import Grid from "@material-ui/core/Grid";
-import TextField from '@material-ui/core/TextField';
-import {css} from "@emotion/react";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import {API_BASE} from "../config/constants";
+import Keyboard from "react-simple-keyboard";
+import "react-simple-keyboard/build/css/index.css";
 
 const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount, imagePath}) => {
 
@@ -19,31 +17,60 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
     }));
     const classes = useStyles(); //Required for making styles
     const history = useHistory(); //Required for redirection
-    const [textInput, setTextInput] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
-    const handleInputChange = (event) => {
-        setTextInput(event.target.value);
-        setErrorMessage('');
-};
-
-    const handleButtonClick = () => {
-        let apiURL = API_BASE + '/redeemPromoCode';
-
-        axios.post(apiURL, { textInput })
-            .then(response => {
-                console.log('API response:', response.data);
-            })
-            .catch(error => {
-                console.error('API error:', error);
-            });
+    const [input, setInput] = useState("");
+    const keyboard = useRef();
+    const layout = {
+        'default': [
+            'A B C {bksp}',
+            '1 2 3 4',
+            '5 6 7 8'
+        ]
     };
 
-    useEffect(() => {
-        // You can add additional logic that runs on component mount or when textInput changes
-        // For example, you might want to validate the input, etc.
-    }, [textInput]);
+    const onChange = input => {
+        setInput(input);
+        console.log("Input changed", input);
+        setErrorMessage('');
+    };
 
+    const onKeyPress = button => {
+        console.log("Button pressed", button);
+        //if (button === "{shift}" || button === "{lock}") handleShift();
+    };
+
+    const onChangeInput = event => {
+        const input = event.target.value;
+        setInput(input);
+        keyboard.current.setInput(input);
+    };
+    /*    const handleInputChange = (event) => {
+            setTextInput(event.target.value);
+            setErrorMessage('');
+        };*/
+
+    const handleButtonClick = () => {
+        let apiURL = API_BASE + '/promoCode';
+
+        axios.post(apiURL, input, {
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        }).then(response => {
+            console.log('API response:', response.data);
+            if (response.data === "Success") {
+                console.log("Promo code is valid");
+                history.push("/promosuccess");
+            } else if (response.data.includes("invalid")) {
+                console.error("Invalid promo code");
+                setErrorMessage(response.data);
+            } else {
+                // Handle other cases if needed
+            }
+        }).catch(error => {
+            console.error('API error:', error);
+        });
+    };
 
     return (
         <div className={classes.root}>
@@ -55,10 +82,16 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
                             <input
                                 id="text-input"
                                 type="text"
-                                value={textInput}
-                                onChange={handleInputChange}
+                                value={input}
+                                onChange={onChangeInput}
                             />
-                            <p className="promoLandingPage_ErrorMessage">{errorMessage}</p>
+                            {errorMessage && <p className="promoLandingPage_ErrorMessage">{errorMessage}</p>}
+                            <Keyboard
+                                keyboardRef={r => (keyboard.current = r)}
+                                onChange={onChange}
+                                onKeyPress={onKeyPress}
+                                layout={layout}
+                            />
                             <button
                                 className="promoLandingPage_SubmitButton"
                                 onClick={handleButtonClick}

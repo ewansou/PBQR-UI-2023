@@ -16,7 +16,7 @@ body {
 
 .promoWithPayToUseLandingPage_LeftDiv {
   width: 100%;
-  margin: 200px 0px;
+  margin: 40px 0px;
 }
 
 .promoWithPayToUseLanding_PageTitle {
@@ -38,9 +38,11 @@ body {
 }
 
 .promoWithPayToUseLandingPage_Image{
-  width: 70%;
+  width: 65%;
   display: block;
   margin: 50px auto 100px auto;
+  position: relative;
+  left: 25px;
 }
 
 .promoWithPayToUseLandingPage_NextButton {
@@ -84,8 +86,25 @@ body {
   margin: 50px auto;
   border: solid 5px #e3e3e3;
 }
-.promoLandingPage_ErrorMessage{
-  color: #f80000;
+
+.simple-keyboard {
+  width: 70%!important;
+  display: block!important;
+  margin: 0 auto!important;
+  font-size: 40px!important;
+  font-family: "Helvetica"!important;
+  margin-bottom: 50px!important;
+}
+
+.simple-keyboard .hg-button {
+  height: 80px!important;
+}
+
+.promoLandingPage_ErrorMessage {
+  color: red;
+  font-size: 35px;
+  text-align: center;
+  margin: 0 0 50px 0;
 }
 
 .promoLandingPage_SubmitButton {

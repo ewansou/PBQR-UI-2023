@@ -11,26 +11,28 @@
     "artifactName": "PBQR-GastroBeats-SetUp-${version}.${ext}"
   },
   "devDependencies": {
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
-    "electron": "^9.4.4",
-    "electron-builder": "^22.11.7",
+    "electron": "^27.1.0",
+    "electron-builder": "^24.6.4",
     "nodemon": "^2.0.0",
-    "wait-on": "^6.0.0",
-    "@types/react-router": "^5.1.20",
-    "@types/react-router-dom": "^5.3.3"
+    "wait-on": "^7.2.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.1",
-    "axios": "^0.21.1",
+    "axios": "^1.6.2",
     "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-countdown-circle-timer": "^2.5.3",
     "react-dom": "^17.0.2",
     "react-responsive-carousel": "^3.2.21",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
+    "react-simple-keyboard": "^3.7.41",
     "react-spinners": "^0.11.0",
+    "simple-keyboard": "^3.7.28",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

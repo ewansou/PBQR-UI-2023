@@ -79,25 +79,25 @@ function App() {
                     <Route exact path="/promosuccess">
                         <PaymentSuccessPage
                             headerText="REDEMPTION SUCCESS"
-                            successColor={TOP_OPTION_SUCCESS_COLOR}
+                            successColor={PROMO_SUCCESS_COLOR}
                         />
                     </Route>
                     <Route exact path="/paymentsuccessgif2">
                         <PaymentSuccessPage
                             headerText="PAYMENT SUCCESS"
-                            successColor={MIDDLE_OPTION_SUCCESS_COLOR}
+                            successColor={TOP_OPTION_SUCCESS_COLOR}
                         />
                     </Route>
                     <Route exact path="/paymentsuccessgif4">
                         <PaymentSuccessPage
                             headerText="PAYMENT SUCCESS"
-                            successColor={BOTTOM_OPTION_SUCCESS_COLOR}
+                            successColor={MIDDLE_OPTION_SUCCESS_COLOR}
                         />
                     </Route>
                     <Route exact path="/paymentsuccessgif6">
                         <PaymentSuccessPage
                             headerText="PAYMENT SUCCESS"
-                            successColor={PROMO_SUCCESS_COLOR}
+                            successColor={BOTTOM_OPTION_SUCCESS_COLOR}
                         />
                     </Route>
                 </Switch>

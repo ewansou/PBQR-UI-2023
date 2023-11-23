@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import {css} from "@emotion/react";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-import {API_BASE, IS_4R} from "../config/constants";
+import {API_BASE, EVENT_NAME, IS_4R} from "../config/constants";
 
 const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printCount, imagePath}) => {
 
@@ -29,11 +29,14 @@ const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printC
 
     //On first mount, call API to retrieve QR code
     useEffect(() => {
-        let apiURL = API_BASE + `/payment/amount=` + paymentAmount;
+        let apiURL = API_BASE + `/makePayment`;
         const fetchData = async () => {
             try {
                 const response = await axios
-                    .post(apiURL, {});
+                    .post(apiURL, {
+                        "amount": paymentAmount,
+                        "eventName": EVENT_NAME
+                    });
                 if (response.data.status === "failed") {
                     console.log("POST requested failed at initial mount:", response.data.error);
                     console.log("Error response is:", response.data);

@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-import {API_BASE} from "../config/constants";
+import {API_BASE, PRIVACY_CLAUSE} from "../config/constants";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 
@@ -58,10 +58,10 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
             }
         }).then(response => {
             console.log('API response:', response.data);
-            if (response.data === "Success") {
+            if (response.data.includes("Valid")) {
                 console.log("Promo code is valid");
                 history.push("/promosuccess");
-            } else if (response.data.includes("invalid")) {
+            } else if (response.data.includes("Invalid")) {
                 console.error("Invalid promo code");
                 setErrorMessage(response.data);
             } else {
@@ -103,27 +103,8 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
                 </Grid>
                 <Grid container item xs={6} className="promoLandingPage_Right">
                     <Grid item xs={12} container={true}>
-                        <div className={"promoLandingPage_PrivacyClause"}>
-                            <p>By making payment and utilising this photo booth service, you agree to the below</p>
-                            <p>(1) You consent to the collection, use and sharing of your photos for marketing
-                                purposes. The companies (Instantly Singapore Pte Ltd and Apollo Entertainment Media
-                                Pte. Ltd may use your photos in their marketing materials, including but not limited
-                                to social media, website, and print advertisements. Your photos will not be
-                                shared with third parties for marketing purposes.</p>
-                            <p>(2) The email address you entered is soley for the purpose of sending you the
-                                soft copies of your photos to you. Your email address will not be shared with
-                                any third parties and will also not be used for any marketing purposes.</p>
-                            <p>(3) In order to protect our equipment, a CCTV has been installed to monitor usage
-                                at the photo booth. You consent to having your usage footage recorded for this
-                                purpose.</p>
-                            <p>(3) The company is not liable for any injury, damage, or loss that may occur
-                                during the photo booth session. Please use the photo booth with care and at your
-                                own risk.</p>
-                            <p>(4) You consent to waive all rights to inspect or approve any photographs taken.</p>
-                            <p>If you are do not consent to any of the above clause, please do not proceed
-                                to use this photo booth.</p>
-                        </div>
-
+                        <div className={"promoLandingPage_PrivacyClause"}
+                             dangerouslySetInnerHTML={{ __html: PRIVACY_CLAUSE }}></div>
                         <button
                             className="promoLandingPage_BackButton"
                             onClick={() => history.push("/")}

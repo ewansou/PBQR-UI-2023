@@ -1,5 +1,5 @@
 {
-  "name": "pbqr-gastrobeats-2023-4Jun2023",
+  "name": "pbqr-lps-2023-dec2023",
   "version": "0.1.1",
   "author": "Ewan Sou, Instantly Singapore Pte Ltd",
   "description": "PBQR 2023 Electron JS UI",
@@ -7,8 +7,8 @@
   "homepage": "./",
   "private": true,
   "build": {
-    "appId": "instantlysg-pbqr-gastrobeats-2023",
-    "artifactName": "PBQR-UI-SetUp-IceMagic-${version}.${ext}"
+    "appId": "instantlysg-pbqr-lps-2023",
+    "artifactName": "PBQR-UI-SetUp-LPS-${version}.${ext}"
   },
   "devDependencies": {
     "@types/react-router": "^5.1.20",

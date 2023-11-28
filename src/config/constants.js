@@ -1,29 +1,26 @@
 /*GENERAL*/
-//export const API_BASE = "https://pbqr-backend-2023.herokuapp.com/api"
+export const API_BASE = "https://pbqr-backend-2023.herokuapp.com/api"
 //export const API_BASE = "http://localhost:23168/api"
-export const API_BASE = "https://0063-42-60-39-219.ngrok-free.app/api"
+//export const API_BASE = "https://d060-42-60-39-219.ngrok-free.app/api"
 export const EVENT_NAME = "LauPaSat";
 export const ENABLE_PROMO = true;
 export const IS_4R = false;
 export const PRIVACY_CLAUSE= `
 <p>By making payment and utilising this photo booth service, you agree to the below</p>
-<p>(1) You consent to the collection, use and sharing of your photos for marketing
-    purposes. The companies (Instantly Singapore Pte Ltd and XXXXXXX
-    Pte. Ltd may use your photos in their marketing materials, including but not limited
-    to social media, website, and print advertisements. Your photos will not be
-    shared with third parties for marketing purposes.</p>
-<p>(2) The email address you entered is soley for the purpose of sending you the
-    soft copies of your photos to you. Your email address will not be shared with
-    any third parties and will also not be used for any marketing purposes.</p>
-<p>(3) In order to protect our equipment, a CCTV has been installed to monitor usage
-    at the photo booth. You consent to having your usage footage recorded for this
-    purpose.</p>
-<p>(3) The company is not liable for any injury, damage, or loss that may occur
-    during the photo booth session. Please use the photo booth with care and at your
-    own risk.</p>
+<p>(1) You consent to the collection, use and sharing of your photos for marketing purposes. The companies 
+(Instantly Singapore Pte Ltd and Kopitiam Investment Pte Ltd may use your photos in their marketing materials, 
+including but not limited to social media, website, and print advertisements. Your photos will not be shared with 
+third parties for marketing purposes.</p>
+<p>(2) The email address you entered is for the purpose of sending you soft copies of your photos and you consent 
+to the collection and use of your email address for marketing purposes. Your email address will not be shared with 
+any third parties.</p>
+<p>(3) In order to protect our equipment, a CCTV has been installed to monitor usage at the photo booth. You consent 
+to having your usage footage recorded for this sole purpose. Your footage will not be shared with any third parties
+or used for any other purposes.</p>
+<p>(3) The company is not liable for any injury, damage, or loss that may occur during the photo booth session. Please 
+use the photo booth with care and at your own risk.</p>
 <p>(4) You consent to waive all rights to inspect or approve any photographs taken.</p>
-<p>If you are do not consent to any of the above clause, please do not proceed
-    to use this photo booth.</p>
+<p>If you do not consent to any of the above clause, please DO NOT proceed to use this photo booth.</p>
 `;
 
 /*COLOR BLOCKS FOR AHK*/

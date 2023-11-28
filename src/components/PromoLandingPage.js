@@ -30,12 +30,10 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
 
     const onChange = input => {
         setInput(input);
-        console.log("Input changed", input);
         setErrorMessage('');
     };
 
     const onKeyPress = button => {
-        console.log("Button pressed", button);
         //if (button === "{shift}" || button === "{lock}") handleShift();
     };
 

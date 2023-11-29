@@ -1,7 +1,7 @@
 /*GENERAL*/
 export const API_BASE = "https://pbqr-backend-2023.herokuapp.com/api"
 //export const API_BASE = "http://localhost:23168/api"
-//export const API_BASE = "https://d060-42-60-39-219.ngrok-free.app/api"
+//export const API_BASE = "https://3a82-42-60-39-219.ngrok-free.app/api"
 export const EVENT_NAME = "LauPaSat";
 export const ENABLE_PROMO = true;
 export const IS_4R = false;

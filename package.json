@@ -1,6 +1,6 @@
 {
   "name": "pbqr-lps-2023-dec2023",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Ewan Sou, Instantly Singapore Pte Ltd",
   "description": "PBQR 2023 Electron JS UI",
   "main": "build/electron.js",

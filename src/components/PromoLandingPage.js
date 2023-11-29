@@ -22,9 +22,10 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
     const keyboard = useRef();
     const layout = {
         'default': [
-            'A B C {bksp}',
-            '1 2 3 4',
-            '5 6 7 8'
+            '0 1 2',
+            '3 4 5',
+            '6 7 8',
+            '9 {bksp}',
         ]
     };
 

@@ -32,6 +32,7 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
     const onChange = input => {
         setInput(input);
         setErrorMessage('');
+        handleActivity();
     };
 
     const onKeyPress = button => {
@@ -42,6 +43,7 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
         const input = event.target.value;
         setInput(input);
         keyboard.current.setInput(input);
+        handleActivity();
     };
     /*    const handleInputChange = (event) => {
             setTextInput(event.target.value);

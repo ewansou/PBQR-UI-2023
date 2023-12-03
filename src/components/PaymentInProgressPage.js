@@ -111,7 +111,7 @@ const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printC
     function terminateSseAndGoBackMenu() {
         sseSource.close();
         closeSse(postRequestStateObject.chargeID);
-        history.push("/paytouselandingpage");
+        history.push("/");
     }
 
     const renderTime = ({remainingTime}) => {
@@ -150,7 +150,7 @@ const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printC
                             <h1 className="paymentInProgress_MakePaymentLeftTitle">{printCount} {printoutSize} Printouts</h1>
                             <span>with softcopies emailing</span>
                             <img
-                                src={imagePath}
+                                src={imagePath} alt=""
                                 className="paymentInProgress_MakePaymentImage"
                             />
                             <p className="paymentInProgress_PaymentAgree">{clause}</p>
@@ -191,6 +191,7 @@ const PaymentInProgressPage = ({clause, paymentAmount, paymentSuccessURL, printC
 
                                         <img
                                             src={postRequestStateObject.imageURL}
+                                            alt=""
                                             className="paymentInProgress_MakePaymentQRCode"
                                         />
                                     </div>

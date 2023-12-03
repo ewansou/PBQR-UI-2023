@@ -27,6 +27,7 @@ function PromoWithPayPerUseLandingPage() {
                             <p className="promoWithPayToUseLanding_PageSubTitle">Enter it to use the photo booth for free!</p>
                             <img
                                 src={promoIcon}
+                                alt=""
                                 className="promoWithPayToUseLandingPage_Image"
                             />
                             <button
@@ -45,6 +46,7 @@ function PromoWithPayPerUseLandingPage() {
                             <p className="promoWithPayToUseLanding_PageSubTitle">Enjoy our photo booth from $10</p>
                             <img
                                 src={payPerUseIcon}
+                                alt=""
                                 className="promoWithPayToUseLandingPage_Image"
                             />
                             <button

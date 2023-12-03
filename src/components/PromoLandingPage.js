@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
@@ -71,6 +71,57 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
         });
     };
 
+    const inactivityTimer = useRef(null);
+
+    const startInactivityTimer = () => {
+        return setTimeout(() => {
+            // Inactivity timeout reached, navigate to the main page
+            history.push("/");
+        }, 10000); // 10 seconds in milliseconds
+    };
+
+    const resetInactivityTimer = () => {
+        clearTimeout(inactivityTimer.current);
+        inactivityTimer.current = startInactivityTimer();
+    };
+
+    const handleBackButtonClick = () => {
+        // Reset inactivity timer when the back button is clicked
+        resetInactivityTimer();
+        history.push("/");
+    };
+
+    const handleActivity = () => {
+        // Reset inactivity timer on user activity
+        resetInactivityTimer();
+    };
+
+    useEffect(() => {
+        console.log("Inactivity useEffect hook is running");
+
+        // Start the initial inactivity timer
+        resetInactivityTimer();
+
+        const handleMouseMove = () => {
+            handleActivity();
+        };
+
+        const handleKeyDown = () => {
+            handleActivity();
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            console.log("Inactivity Cleanup: Removing event listeners");
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("keydown", handleKeyDown);
+            // Clear inactivity timer on component unmount
+            clearTimeout(inactivityTimer.current);
+        };
+    }, []); // No dependencies to ensure the effect runs once
+
     return (
         <div className={classes.root}>
             <Grid container>
@@ -106,7 +157,7 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
                              dangerouslySetInnerHTML={{ __html: PRIVACY_CLAUSE }}></div>
                         <button
                             className="promoLandingPage_BackButton"
-                            onClick={() => history.push("/")}
+                            onClick={handleBackButtonClick}
                         >
                             BACK TO MAIN MENU
                         </button>

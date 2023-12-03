@@ -38,7 +38,7 @@ const PaymentSuccessPage = ({headerText, successColor}) => {
                 return [true, 1500];
             }}
             isPlaying
-            duration={10} //20 seconds
+            duration={10} //10 seconds
             size={0}
             colors="#e3e3e3"
         >
@@ -47,7 +47,7 @@ const PaymentSuccessPage = ({headerText, successColor}) => {
       </span>
             <div className="paymentSuccessPage_SuccessLogoDiv">
                 <p className="paymentSuccessPage_Presented">Presented to you by:</p>
-                <img src={instantlysgLogo} className="paymentSuccessPage_SucessLogo" />
+                <img src={instantlysgLogo} alt="" className="paymentSuccessPage_SucessLogo" />
             </div>
         </div>
         </div>

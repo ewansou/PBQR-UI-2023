@@ -34,7 +34,7 @@ const LandingSelectionTile = ({headerText, description, amount, is4R, url}) => {
             {headerText && <h1>{headerText}</h1>}
             {description && <h2>{description}</h2>}
             <div className="payToUseLandingSelectionTile_DivRow">
-                <img src={imageSrc} className="payToUseLandingSelectionTile_LandingImage"/>
+                <img src={imageSrc} alt="" className="payToUseLandingSelectionTile_LandingImage"/>
                 <div>
                     <h1 className="payToUseLandingSelectionTile_LandingPricing">{amount}</h1>
                     <button

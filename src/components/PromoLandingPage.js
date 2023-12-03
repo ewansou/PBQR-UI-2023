@@ -79,7 +79,7 @@ const PromoLandingPage = ({clause, paymentAmount, paymentSuccessURL, printCount,
         return setTimeout(() => {
             // Inactivity timeout reached, navigate to the main page
             history.push("/");
-        }, 10000); // 10 seconds in milliseconds
+        }, 180000); // 180 seconds in milliseconds
     };
 
     const resetInactivityTimer = () => {
